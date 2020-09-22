@@ -34,6 +34,7 @@ class JedisApplicationTests {
         try {
             multi.set("user1", result);
             multi.set("user2", result);
+            int i = 1/0;       //代码抛出异常，模拟事务回滚
             // 执行事务
             multi.exec();
         }catch (Exception e){
